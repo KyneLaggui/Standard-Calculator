@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/eurostile');
 @import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/digital-7-mono');
 
 * {
     margin: 0;
@@ -8,16 +9,16 @@
     font-family: 'Poppins', sans-serif;
   }
 
-  body {
+body {
     display: flex;
     height: 100vh;
     align-items: center;
     justify-content: center;
     
     
-  }
+}
 
-  .top-calcu {
+.top-calcu {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -25,9 +26,9 @@
     background-color: black;
     padding: 1em 2em 0 2em;
     border-radius: 20px 20px 0px 0px;
-  }
+}
 
-  .branding {
+.branding {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -35,17 +36,17 @@
     width: 100%;
     padding: 1em;
     color: white;
-  }
+}
 
-  .branding h1 {
+.branding h1 {
     font-family: 'Eurostile', sans-serif;
-  }
+}
 
-  .branding p {
+.branding p {
     font-size: 0.8em;
-  }
+}
 
-  .main-calculator {
+.main-calculator {
    background-image: linear-gradient(90deg, #e6ebee, #f0f0f0);
     box-shadow: 0px 0px 0px 0px #b1b8c0 inset,
         0px -10px 10px 10px #b1b8c0 inset,
@@ -57,16 +58,16 @@
     min-height: 400px;
     border-radius: 20px;
 
-  }
+}
   
-  
-  .main-calculator .number {
+.main-calculator .number {
     color: #fff;
     position: relative;
     display: grid;
-    width: 4em;
-    height: 4em;
-    place-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 4.5em;
+    height: 4.5em;
     margin: 5px;
     background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
     box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
@@ -76,13 +77,13 @@
     cursor: pointer;
     font-weight: 400;
     border-radius: 10px;
-  }
+}
   
-  .calcu .number:active {
+.calcu .number:active {
     filter: brightness(1.5);
-  }
+}
   
-  .calcu .number::before {
+.calcu .number::before {
     content: "";
     position: absolute;
     top: 3px;
@@ -96,64 +97,67 @@
     border-left: 1px solid #0004;
     border-bottom: 1px solid #0004;
     border-top: 1px solid #0009;
-  }
+}
   
-  .calcu .number div {
+.calcu .number div {
     position: relative;
     font-style: normal;
     font-size: 1.2em;
     text-transform: uppercase;
-  }
+}
   
-  .calcu .bottom-part {
+.calcu .bottom-part {
     position: relative;
     display: grid;
+    justify-content: center;
+    align-items: center;
     grid-template-columns: repeat(5, 1fr);
     padding: 1em;
-  }
+}
 
-  .calcu .calcu-screen {
-    
-    height: 100px;
-    width: calc(100% - 20px);
-    left: 10px;
+.calcu .calcu-screen {
+    height: 1.2em;
+    width: 5.5em;
     border: none;
     outline: none;
-    background-color: #a7af7c;
+    background-color: #d3e5e6;
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
     text-align: right;
-    padding: 10px;
-    font-size: 2em;
-  }
+    font-size: 5em;
+    font-family: 'Digital-7 Mono', sans-serif;
+}
   
-  .calcu .clear {
-    grid-column: span 2;
-    width: 180px;
-    background: #f00;
-  }
+.calcu .lighter {
+    background: #5e5960;
+}
   
-  .calcu .clear::before {
-    background: linear-gradient(90deg, #d20000, #ffffff5c);
-    border-left: 1px solid #fff4;
-    border-bottom: 1px solid #fff4;
-    border-top: 1px solid #fff4;
-  }
+.calcu .lighter::before {
+    background: linear-gradient(90deg, #433d44 , #5e5960);
+    border-left: 1px solid #4d494f;
+    border-bottom: 1px solid #4d494f;
+    border-top: 1px solid #4d494f;
+}
   
-  .calcu .plus {
+.calcu .plus {
     grid-row: span 2;
-    height: 8.7em;
-  }
+    height: 10em;
+}
   
-  .calcu .equal {
-    background: #2196f3;
-  }
-  
-  .calcu .equal::before {
-    background: linear-gradient(90deg, #1479c9, #ffffff5c);
+
+.calcu .reset{
+    background: #d56c3d !important;
+}
+
+.calcu .reset .reset-text{
+    font-size: 1em !important;
+}
+
+.calcu .reset::before {
+    background: linear-gradient(90deg, #9a481e, #ffffff5c);
     border-left: 1px solid #fff4;
     border-bottom: 1px solid #fff4;
     border-top: 1px solid #fff4;
-  }
+}
   
