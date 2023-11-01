@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+
+
+  
+  body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+    
+  }
+
+  .top-calcu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .branding {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+  }
+
+  .panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
+.cell {
+    background-color: #ccc;
+    height: 30px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+  
+  .main-calculator {
+   background-image: linear-gradient(90deg, #e6ebee, #f0f0f0);
+    box-shadow: 0px 0px 0px 0px #b1b8c0 inset,
+        0px -10px 10px 10px #b1b8c0 inset,
+        0px 1px 0px 2px #b1b8c0 inset,
+        0 55px 10px -25px rgba(0,0,0,0.1),
+        0 65px 30px -10px rgba(0,0,0,0.5);
+    position: relative;
+    min-width: 300px;
+    min-height: 400px;
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+
+  }
+  
+  
+  .main-calculator .number {
+    color: #fff;
+    position: relative;
+    display: grid;
+    width: 4em;
+    height: 4em;
+    place-items: center;
+    margin: 5px;
+    background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+      inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
+      10px 20px 25px rgba(0, 0, 0, 0.4);
+    user-select: none;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 10px;
+  }
+  
+  .calcu .number:active {
+    filter: brightness(1.5);
+  }
+  
+  .calcu .number::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1),
+      10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+  }
+  
+  .calcu .number div {
+    position: relative;
+    font-style: normal;
+    font-size: 1.2em;
+    text-transform: uppercase;
+  }
+  
+  .calcu {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .top-calcu {
+    position: relative;
+    grid-column: span 5;    
+  }
+  
+  .calcu .calcu-screen {
+    
+    height: 100px;
+    width: calc(100% - 20px);
+    left: 10px;
+    border: none;
+    outline: none;
+    background-color: #a7af7c;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+    text-align: right;
+    padding: 10px;
+    font-size: 2em;
+  }
+  
+  .calcu .clear {
+    grid-column: span 2;
+    width: 180px;
+    background: #f00;
+  }
+  
+  .calcu .clear::before {
+    background: linear-gradient(90deg, #d20000, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+  }
+  
+  .calcu .plus {
+    grid-row: span 2;
+    height: 8.7em;
+  }
+  
+  .calcu .equal {
+    background: #2196f3;
+  }
+  
+  .calcu .equal::before {
+    background: linear-gradient(90deg, #1479c9, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+  }
+  
