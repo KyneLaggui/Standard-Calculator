@@ -23,26 +23,26 @@
                 <div class="number lighter" onclick=""><div>MR</div></div>
                 <div class="number lighter" onclick=""><div>M-</div></div>
                 <div class="number lighter" onclick=""><div>M+</div></div>
-                <div class="number lighter" onclick=""><div>÷</div></div>
+                <div class="number lighter" onclick="performOperation('/')"><div>÷</div></div>
                 <div class="number lighter" onclick=""><div>BIN</div></div>
-                <div class="number" onclick="calcu.screen.value+='7'"><div>7</div></div>
-                <div class="number" onclick="calcu.screen.value+='8'"><div>8</div></div>
-                <div class="number" onclick="calcu.screen.value+='9'"><div>9</div></div>
-                <div class="number lighter" onclick=""><div>×</div></div>
+                <div class="number" onclick="valueNum('7')"><div>7</div></div>
+                <div class="number" onclick="valueNum('8')"><div>8</div></div>
+                <div class="number" onclick="valueNum('9')"><div>9</div></div>
+                <div class="number lighter" onclick="performOperation('*')"><div>×</div></div>
                 <div class="number lighter" onclick="calcu.screen.value = calcu.screen.value.slice(0, -1)"><div>▶</div></div>
-                <div class="number" onclick="calcu.screen.value+='4'"><div>4</div></div>
-                <div class="number" onclick="calcu.screen.value+='5'"><div>5</div></div>
-                <div class="number" onclick="calcu.screen.value+='6'"><div>6</div></div>
-                <div class="number lighter" onclick=""><div>-</div></div>
-                <div class="number reset" onclick="calcu.screen.value=''"><div class="reset-text">C/AC</div></div>
-                <div class="number" onclick="calcu.screen.value+='1'"><div>1</div></div>
-                <div class="number" onclick="calcu.screen.value+='2'"><div>2</div></div>
-                <div class="number" onclick="calcu.screen.value+='3'"><div>3</div></div>
-                <div class="number plus lighter" onclick=""><div>+</div></div>
-                <div class="number" onclick="calcu.screen.value+='0'"><div>0</div></div>
-                <div class="number" onclick="calcu.screen.value+='00'"><div>00</div></div>
-                <div class="number" onclick="calcu.screen.value+='.'"><div>.</div></div>
-                <div class="number lighter" onclick=""><div>=</div></div>
+                <div class="number" onclick="valueNum('4')"><div>4</div></div>
+                <div class="number" onclick="valueNum('5')"><div>5</div></div>
+                <div class="number" onclick="valueNum('6')"><div>6</div></div>
+                <div class="number lighter" onclick="performOperation('-')"><div>-</div></div>
+                <div class="number reset" onclick="resetCalcu()"><div class="reset-text">C/AC</div></div>
+                <div class="number" onclick="valueNum('1')"><div>1</div></div>
+                <div class="number" onclick="valueNum('2')"><div>2</div></div>
+                <div class="number" onclick="valueNum('3')"><div>3</div></div>
+                <div class="number plus lighter" onclick="performOperation('+')"><div>+</div></div>
+                <div class="number" onclick="valueNum('0')"><div>0</div></div>
+                <div class="number" onclick="valueNum('00')"><div>00</div></div>
+                <div class="number" onclick="valueNum('.')"><div>.</div></div>
+                <div class="number lighter" onclick="calculateResult()"><div>=</div></div>
             </div>
 
            
