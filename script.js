@@ -1,11 +1,15 @@
 const calcuScreen = document.querySelector(".calcu-screen");
 const valuesCalcu = [];
+const binaryButton = document.querySelector(".binary")
 
 function valueNum(value) {
     if (calcuScreen.value.length < 12) {
         calcuScreen.value += value;
     }
+    binaryButton.addEventListener("click", calcuScreen.value.toString(2))
+   
 }
+
 
 function resetCalcu() {
     calcuScreen.value = '';
@@ -17,7 +21,7 @@ function backspace() {
     
 }
 
-function performOperation(operator) {
+function calcuOperation(operator) {
     const currentValue = calcuScreen.value;
 
     if (currentValue !== '') {
@@ -28,9 +32,9 @@ function performOperation(operator) {
 }
 
 function calculateResult() {
-    const currentValue = calcuScreen.value;
-    if (currentValue !== '') {
-        valuesCalcu.push(parseFloat(currentValue));
+    const arrayValue = calcuScreen.value;
+    if (arrayValue !== '') {
+        valuesCalcu.push(parseFloat(arrayValue));
     }
 
     try {
@@ -39,5 +43,12 @@ function calculateResult() {
         valuesCalcu.length = 0;
     } catch (error) {
         calcuScreen.value = 'Error';
+    }
+}
+
+function binaryNumber() {
+    const currentValue = parseFloat(calcuScreen.value);
+    if (!isNaN(currentValue)) {
+            calcuScreen.value = currentValue.toString(2);
     }
 }
