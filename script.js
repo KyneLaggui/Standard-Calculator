@@ -74,7 +74,7 @@ function memoryPlus() {
 
 function memoryMinus() {
     const value = parseFloat(calcuScreen.value);
-    if (!isNaN(value)) {
+    if (!isNaN(memoryTotal)) {
         console.log("memoryMinus", memoryTotal)
         memoryTotal = memoryTotal - value;
         calcuScreen.value= " ";
