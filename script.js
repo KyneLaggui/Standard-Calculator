@@ -1,11 +1,15 @@
 const calcuScreen = document.querySelector(".calcu-screen");
 const valuesCalcu = [];
 const binaryButton = document.querySelector(".binary")
-const numberButton = document.querySelector(".number")
+const numberButton = document.querySelectorAll(".number")
+let memoryRecallState = false;
 
 function valueNum(value) {
-    if (calcuScreen.value.length < 12) {
+    if (!memoryRecallState) {
         calcuScreen.value += value;
+    } else {
+        calcuScreen.value = value; 
+        memoryRecallState = false; 
     }
     binaryButton.addEventListener("click", () => calcuScreen.value.toString(2))
    
@@ -91,8 +95,9 @@ function memoryClear() {
 
 
 function memoryRecall() {
+    memoryRecallState = true;
     calcuScreen.value = memoryTotal
     
-    numberButton.addEventListener("click", () => calcuScreen.value = "")
 }
+
 
