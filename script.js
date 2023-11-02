@@ -1,21 +1,15 @@
-// function backspace() {
-//     var cvalScreen = document.calcu.screen.value;
-
-//     if (cvalScreen.length > 0) {
-//         var newValue = cvalScreen.slice(0, -1);
-
-//         document.calcu.screen.value = newValue;
-//     }
-// }
 const calcuScreen = document.querySelector(".calcu-screen");
+const valuesCalcu = [];
 
 function valueNum(value) {
-    calcuScreen.value += value;
-    
+    if (calcuScreen.value.length < 12) {
+        calcuScreen.value += value;
+    }
 }
 
 function resetCalcu() {
     calcuScreen.value = '';
+    valuesCalcu.length = 0;
 }
 
 function backspace() {
@@ -24,25 +18,25 @@ function backspace() {
 }
 
 function performOperation(operator) {
-    var calcuScreen = document.getElementById("calcu-screen");
-    var screenValue = calcuScreen.value;
-    
-    if (screenValue !== '') {
-        var lastChar = screenValue.charAt(screenValue.length - 1);
-        if (lastChar !== '+' && lastChar !== '-' && lastChar !== '*' && lastChar !== '/') {
-            calcuScreen.value += operator;
-        }
+    const currentValue = calcuScreen.value;
+
+    if (currentValue !== '') {
+        valuesCalcu.push(parseFloat(currentValue));
+        valuesCalcu.push(operator);
+        calcuScreen.value = '';
     }
 }
 
-    
 function calculateResult() {
-    var calcuScreen = document.getElementById("calcu-screen");
-    var screenValue = calcuScreen.value;
-    
+    const currentValue = calcuScreen.value;
+    if (currentValue !== '') {
+        valuesCalcu.push(parseFloat(currentValue));
+    }
+
     try {
-        var result = eval(screenValue);
+        const result = eval(valuesCalcu.join(''));
         calcuScreen.value = result;
+        valuesCalcu.length = 0;
     } catch (error) {
         calcuScreen.value = 'Error';
     }
