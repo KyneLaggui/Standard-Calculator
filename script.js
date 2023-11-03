@@ -41,20 +41,27 @@ function operationCalcu(operator) {
 
 function resultCalcu() {
     const arrayValue = calcuScreen.value;
-    if (arrayValue !== '') {
-        valuesCalcu.push(parseFloat(arrayValue));
+    if (valuesCalcu.some(value => typeof value === 'string')) {
+        if (arrayValue !== '') {
+            valuesCalcu.push(parseFloat(arrayValue));
+        }
+
+        try {
+            const result = eval(valuesCalcu.join(''));
+            if (result.toString().length > 12) {
+                calcuScreen.value = result.toExponential(4);
+            } else {
+                calcuScreen.value = result;
+            }
+        } catch (error) {
+            calcuScreen.value = 'Error';
+        }
+    } else {
+
+        calcuScreen.value = arrayValue;
     }
 
-    try {
-        const result = eval(valuesCalcu.join(''));
-        if (result.toString().length > 12) {
-            calcuScreen.value = result.toExponential(4); 
-        } else {
-            calcuScreen.value = result;
-        }
-    } catch (error) {
-        calcuScreen.value = 'Error';
-    }
+    
 }
 
 function binaryNumber() {
