@@ -69,16 +69,32 @@ function resultCalcu() {
 
 function binaryNumber() {
     const currentValue = parseFloat(calcuScreen.value);
-    console.log(currentValue)
+
     if (!isNaN(currentValue)) {
-        const binaryValue = currentValue.toString(2);
-        if (binaryValue.length <= 12) {
-            calcuScreen.value = binaryValue;
+        if (currentValue >= 0) {
+            const positiveBinary = currentValue.toString(2);
+            if (positiveBinary.length <= 12) {
+                calcuScreen.value = positiveBinary;
+            } else {
+                calcuScreen.value = "ERROR";
+            }
+
         } else {
-            calcuScreen.value = "Error";
+            const absoluteBinaryValue = Math.abs(currentValue).toString(2);
+            const inverseBinaryValue = absoluteBinaryValue.split('').map(bit => (bit === '0' ? '1' : '0')).join('');
+            const binaryToDecimal = parseInt(inverseBinaryValue, 2);
+            const twosComplement = (binaryToDecimal + 1).toString(2);
+            const addZeroBeginning = twosComplement.padStart(absoluteBinaryValue.length, '0');
+            
+            if (addZeroBeginning.length <= 12) {
+                calcuScreen.value = addZeroBeginning;
+            } else {
+                calcuScreen.value = "ERROR";
+            }
         }
     }
 }
+
 
 memoryCalcu = []
 let memoryTotal;
