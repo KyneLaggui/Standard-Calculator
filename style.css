@@ -76,10 +76,12 @@ body {
     cursor: pointer;
     font-weight: 400;
     border-radius: 10px;
+    transition: transform 0.2s ease;
 }
   
 .calcu .number:active {
     filter: brightness(1.5);
+    transform: scale(0.9);
 }
   
 .calcu .number::before {
@@ -158,4 +160,5 @@ body {
     border-bottom: 1px solid #fff4;
     border-top: 1px solid #fff4;
 }
+
   

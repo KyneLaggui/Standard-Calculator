@@ -24,8 +24,6 @@ function valueNum(value) {
 function resetCalcu() {
     calcuScreen.value = '';
     valuesCalcu.length = 0;
-    memoryCalcu = []
-    memoryTotal = ""
     alreadyBinary = false;
 }
 
