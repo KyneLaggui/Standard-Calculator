@@ -4,7 +4,7 @@ const binaryButton = document.querySelector(".binary")
 const numberButton = document.querySelectorAll(".number")
 let memoryRecallState = false;
 let memoryClearState = false;
-
+let alreadyBinary = false;
 
 function valueNum(value) {
     if (!memoryRecallState && !memoryClearState) {
@@ -25,6 +25,7 @@ function resetCalcu() {
     valuesCalcu.length = 0;
     memoryCalcu = []
     memoryTotal = ""
+    alreadyBinary = false;
 }
 
 function backspace() {
@@ -68,6 +69,9 @@ function resultCalcu() {
 }
 
 function binaryNumber() {
+    if (alreadyBinary) {
+        return; 
+    }
     const currentValue = parseFloat(calcuScreen.value);
 
     if (!isNaN(currentValue)) {
@@ -75,6 +79,7 @@ function binaryNumber() {
             const positiveBinary = currentValue.toString(2);
             if (positiveBinary.length <= 12) {
                 calcuScreen.value = positiveBinary;
+                alreadyBinary = true;
             } else {
                 calcuScreen.value = "ERROR";
             }
@@ -88,6 +93,7 @@ function binaryNumber() {
             
             if (addZeroBeginning.length <= 12) {
                 calcuScreen.value = addZeroBeginning;
+                alreadyBinary = true;
             } else {
                 calcuScreen.value = "ERROR";
             }
