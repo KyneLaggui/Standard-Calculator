@@ -179,13 +179,20 @@ body {
 
     .calcu .calcu-screen {
         width: 100%;
-        height: 1em;
-        font-size: 4em;
+        font-size: 3.9em;
     }
 }
 
 @media screen and (max-width: 440px) {
-   
+    
+    .branding h1 {
+        font-size: 1.5em;
+    }
+
+    .branding p {
+        font-size: 0.7em;
+    }
+
     .main-calculator .number {
         width: 3.5em;
         height: 3.5em;
@@ -195,6 +202,14 @@ body {
     }
     .calcu .plus {
         height: 7.5em;
+    }
+
+    .calcu .calcu-screen {
+        font-size: 3.5em;
+    }
+
+    .calcu .reset .reset-text {
+        font-size: 0.8em !important;
     }
 
 }
@@ -210,13 +225,29 @@ body {
         height: 6.8em !important;
     }
 
+    .calcu .calcu-screen {
+        font-size: 3em;
+    }
+
 }
 
-@media screen and (max-width: 400px) {
-   
+@media screen and (max-width: 360px) {
+
+    .branding {
+        padding: 0.5em;
+    }
+
+    .branding h1 {
+        font-size: 1.3em;
+    }
+
+    .branding p {
+        font-size: 0.6em;
+    }
+
     .main-calculator .number {
-        width: 2.9em;
-        height: 2.9em;
+        width: 2.8em;
+        height: 2.8em;
     }
 
     .calcu .number div {
@@ -225,6 +256,27 @@ body {
 
     .calcu .reset .reset-text {
         font-size: 0.6em !important;
+    }
+
+    .calcu .calcu-screen {
+        font-size: 2.7em;
+    }
+
+}
+
+@media screen and (max-width: 330px) {
+   
+    .main-calculator .number {
+        width: 2.7em;
+        height: 2.7em;
+    }
+
+    .calcu .number div {
+        font-size: 0.7em;
+    }
+
+    .calcu .reset .reset-text {
+        font-size: 0.5em !important;
     }
 
 }
