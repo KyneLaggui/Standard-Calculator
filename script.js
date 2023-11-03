@@ -8,9 +8,10 @@ let alreadyBinary = false;
 
 function valueNum(value) {
     if (!memoryRecallState && !memoryClearState) {
-        if (calcuScreen.value.length < 12) {
-            calcuScreen.value += value;
+        if (value === "." && calcuScreen.value.includes(".")) {
+            return;
         }
+        calcuScreen.value += value;
     } else {
         calcuScreen.value = value;
         memoryRecallState = false;
@@ -40,6 +41,7 @@ function operationCalcu(operator) {
         valuesCalcu.push(parseFloat(currentValue));
         valuesCalcu.push(operator);
         calcuScreen.value = '';
+        console.log(valuesCalcu)
     }
 }
 
