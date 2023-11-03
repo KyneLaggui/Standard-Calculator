@@ -6,10 +6,12 @@ let memoryRecallState = false;
 
 function valueNum(value) {
     if (!memoryRecallState) {
-        calcuScreen.value += value;
+        if (calcuScreen.value.length < 12) {
+            calcuScreen.value += value;
+        }
     } else {
-        calcuScreen.value = value; 
-        memoryRecallState = false; 
+        calcuScreen.value = value;
+        memoryRecallState = false;
     }
     binaryButton.addEventListener("click", () => calcuScreen.value.toString(2))
    
@@ -54,7 +56,7 @@ function resultCalcu() {
 
 function binaryNumber() {
     const currentValue = parseFloat(calcuScreen.value);
-    if (!isNaN(currentValue)) {
+    if (!isNaN(currentValue) && calcuScreen.value.length < 12) {
             calcuScreen.value = currentValue.toString(2);
     }
 }
