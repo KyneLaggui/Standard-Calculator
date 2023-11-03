@@ -5,14 +5,17 @@ const numberButton = document.querySelectorAll(".number")
 let memoryRecallState = false;
 let memoryClearState = false;
 let alreadyBinary = false;
+let calcuHasValue = false;
 
 function valueNum(value) {
+    
     if (!memoryRecallState && !memoryClearState) {
         if (value === "." && calcuScreen.value.includes(".")) {
             return;
         }
         if (calcuScreen.value.length < 12) {
             calcuScreen.value += value;
+            calcuHasValue = true;
         }
     } else {
         calcuScreen.value = value;
@@ -20,13 +23,24 @@ function valueNum(value) {
         memoryClearState = false;
     }
     binaryButton.addEventListener("click", () => calcuScreen.value.toString(2))
+    changeResetText()
    
+}
+
+function changeResetText() {
+    if (calcuHasValue) {
+        document.querySelector(".resetText").textContent = "CE";
+    } else {
+        document.querySelector(".resetText").textContent = "AC";
+    }
 }
 
 function resetCalcu() {
     calcuScreen.value = '';
     valuesCalcu.length = 0;
     alreadyBinary = false;
+    calcuHasValue = false;
+    changeResetText();
 }
 
 function backspace() {
