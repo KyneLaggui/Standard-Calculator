@@ -47,8 +47,11 @@ function resultCalcu() {
 
     try {
         const result = eval(valuesCalcu.join(''));
-        calcuScreen.value = result;
-        valuesCalcu.length = 0;
+        if (result.toString().length > 12) {
+            calcuScreen.value = result.toExponential(4); 
+        } else {
+            calcuScreen.value = result;
+        }
     } catch (error) {
         calcuScreen.value = 'Error';
     }
@@ -56,8 +59,13 @@ function resultCalcu() {
 
 function binaryNumber() {
     const currentValue = parseFloat(calcuScreen.value);
-    if (!isNaN(currentValue) && calcuScreen.value.length < 12) {
-            calcuScreen.value = currentValue.toString(2);
+    if (!isNaN(currentValue)) {
+        const binaryValue = currentValue.toString(2);
+        if (binaryValue.length <= 12) {
+            calcuScreen.value = binaryValue;
+        } else {
+            calcuScreen.value = "Error";
+        }
     }
 }
 
