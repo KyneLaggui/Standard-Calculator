@@ -110,4 +110,11 @@ function memoryRecall() {
     
 }
 
+function valueSign() {
+    const currentValue = parseFloat(calcuScreen.value);
+
+    if (!isNaN(currentValue)) {
+        calcuScreen.value = (-currentValue).toString();
+    }
+}
 
