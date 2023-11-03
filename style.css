@@ -56,6 +56,7 @@ body {
     min-width: 300px;
     min-height: 400px;
     border-radius: 20px;
+    margin: 1em;
 
 }
   
@@ -161,4 +162,71 @@ body {
     border-top: 1px solid #fff4;
 }
 
+@media screen and (max-width: 535px) {
+    .main-calculator {
+        width: 100%;
+        
+    }
+
+    .main-calculator .number {
+        width: 4em;
+        height: 4em;
+    }
+
+    .calcu .plus {
+        height: 8.5em;
+    }
+
+    .calcu .calcu-screen {
+        width: 100%;
+        height: 1em;
+        font-size: 4em;
+    }
+}
+
+@media screen and (max-width: 440px) {
+   
+    .main-calculator .number {
+        width: 3.5em;
+        height: 3.5em;
+    }
+    .calcu .number div {
+        font-size: 1em;
+    }
+    .calcu .plus {
+        height: 7.5em;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+   
+    .main-calculator .number {
+        width: 3em;
+        height: 3em;
+    }
+
+    .calcu .plus {
+        height: 6.8em !important;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+   
+    .main-calculator .number {
+        width: 2.9em;
+        height: 2.9em;
+    }
+
+    .calcu .number div {
+        font-size: 0.8em;
+    }
+
+    .calcu .reset .reset-text {
+        font-size: 0.6em !important;
+    }
+
+}
+  
   

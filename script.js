@@ -11,7 +11,9 @@ function valueNum(value) {
         if (value === "." && calcuScreen.value.includes(".")) {
             return;
         }
-        calcuScreen.value += value;
+        if (calcuScreen.value.length < 12) {
+            calcuScreen.value += value;
+        }
     } else {
         calcuScreen.value = value;
         memoryRecallState = false;
