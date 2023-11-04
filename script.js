@@ -70,8 +70,10 @@ function resultCalcu() {
             const result = eval(valuesCalcu.join(''));
             if (result.toString().length > 12) {
                 calcuScreen.value = result.toExponential(4);
+                valuesCalcu.length = 0;
             } else {
                 calcuScreen.value = result;
+                valuesCalcu.length = 0;
             }
         } catch (error) {
             calcuScreen.value = 'Error';
