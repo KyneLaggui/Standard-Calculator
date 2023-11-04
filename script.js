@@ -6,6 +6,7 @@ let memoryRecallState = false;
 let memoryClearState = false;
 let alreadyBinary = false;
 let calcuHasValue = false;
+hasPerformedCalculation = false;
 
 function valueNum(value) {
     
@@ -40,6 +41,7 @@ function resetCalcu() {
     valuesCalcu.length = 0;
     alreadyBinary = false;
     calcuHasValue = false;
+    hasPerformedCalculation = false;
     changeResetText();
 }
 
@@ -60,10 +62,17 @@ function operationCalcu(operator) {
 }
 
 function resultCalcu() {
+    if (hasPerformedCalculation) {
+        return; 
+    }
     const arrayValue = calcuScreen.value;
     if (valuesCalcu.some(value => typeof value === 'string')) {
         if (arrayValue !== '') {
             valuesCalcu.push(parseFloat(arrayValue));
+        }
+
+        if (valuesCalcu.length > 1 && typeof valuesCalcu[valuesCalcu.length - 1] === 'string') {
+            valuesCalcu.pop();
         }
 
         try {
@@ -75,6 +84,7 @@ function resultCalcu() {
                 calcuScreen.value = result;
                 valuesCalcu.length = 0;
             }
+            hasPerformedCalculation = false;
         } catch (error) {
             calcuScreen.value = 'Error';
         }
