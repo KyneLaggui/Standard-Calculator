@@ -6,7 +6,7 @@ let memoryRecallState = false;
 let memoryClearState = false;
 let alreadyBinary = false;
 let calcuHasValue = false;
-hasPerformedCalculation = false;
+let hasPerformedCalculation = false;
 
 function valueNum(value) {
     
@@ -135,7 +135,7 @@ memoryCalcu = []
 let memoryTotal;
 function memoryPlus() {
     const value = parseFloat(calcuScreen.value);
-    if (!isNaN(value)) {
+    if (!isNaN(value) && !alreadyBinary) {
         memoryCalcu.push(value);
         memoryTotal = memoryCalcu.reduce((valueArray, newValue) => valueArray + newValue);
         calcuScreen.value= " ";
@@ -146,7 +146,7 @@ function memoryPlus() {
 
 function memoryMinus() {
     const value = parseFloat(calcuScreen.value);
-    if (!isNaN(memoryTotal)) {
+    if (!isNaN(memoryTotal) && !alreadyBinary) {
         console.log("memoryMinus", memoryTotal)
         memoryTotal = memoryTotal - value;
         calcuScreen.value= " ";
