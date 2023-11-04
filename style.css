@@ -117,6 +117,7 @@ body {
 }
 
 .calcu .calcu-screen {
+    position: relative;
     height: 1.2em;
     width: 5.5em;
     border: none;
