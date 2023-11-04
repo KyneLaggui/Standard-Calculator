@@ -128,8 +128,7 @@ body {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
     text-align: right;
     font-size: 5em;
-    /* font-family: 'Digital-7 Mono', sans-serif; */
-    z-index: 99;
+    font-family: 'Digital-7 Mono', sans-serif;
 }
   
 .calcu .lighter {
