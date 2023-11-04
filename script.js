@@ -10,7 +10,7 @@ hasPerformedCalculation = false;
 
 function valueNum(value) {
     
-    if (!memoryRecallState && !memoryClearState) {
+    if (!memoryRecallState && !memoryClearState && !alreadyBinary) {
         if (value === "." && calcuScreen.value.includes(".")) {
             return;
         }
@@ -22,6 +22,7 @@ function valueNum(value) {
         calcuScreen.value = value;
         memoryRecallState = false;
         memoryClearState = false;
+        alreadyBinary = false;
     }
     binaryButton.addEventListener("click", () => calcuScreen.value.toString(2))
     changeResetText()
