@@ -168,6 +168,42 @@
 
     }
 
+    // function memoryPlus() {
+    //     const value = parseFloat(calcuScreen.value);
+    //     if (!isNaN(value)) {
+    //         if (alreadyBinary) {
+    //             const binaryValue = calcuScreen.value;
+    //             const decimalValue = parseInt(binaryValue, 2);
+    //             memoryCalcu.push(decimalValue);
+    //         } else {
+    //             memoryCalcu.push(value);
+    //         }
+    
+    //         memoryTotal = memoryCalcu.reduce((valueArray, newValue) => valueArray + newValue);
+    //         calcuScreen.value = " ";
+    //         console.log(memoryCalcu);
+    //         console.log(memoryTotal);
+    //     }
+    // }
+    
+    // function memoryMinus() {
+    //     const value = parseFloat(calcuScreen.value);
+    //     if (!isNaN(memoryTotal)) {
+    //         if (alreadyBinary) {
+    //             const binaryValue = calcuScreen.value;
+    //             const decimalValue = parseInt(binaryValue, 2);
+    //             memoryTotal = memoryTotal - decimalValue;
+    //         } else {
+    //             memoryTotal = memoryTotal - value;
+    //         }
+    
+    //         calcuScreen.value = " ";
+    //         memoryCalcu = [memoryTotal];
+    //         console.log(memoryCalcu);
+    //         console.log(memoryTotal);
+    //     }
+    // }
+
     function memoryClear() {
         memoryClearState = true;
         calcuScreen.value = 0
