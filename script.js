@@ -64,45 +64,48 @@
 
     function resultCalcu() {
         if (hasPerformedCalculation) {
-            return; 
+            return;
         }
         const arrayValue = calcuScreen.value;
         if (valuesCalcu.some(value => typeof value === 'string')) {
             if (arrayValue !== '') {
                 valuesCalcu.push(parseFloat(arrayValue));
             }
-
+    
             if (valuesCalcu.length > 1 && typeof valuesCalcu[valuesCalcu.length - 1] === 'string') {
                 valuesCalcu.pop();
             }
-
+    
             for (let i = 1; i < valuesCalcu.length; i += 2) {
                 if (valuesCalcu[i] === '-' && valuesCalcu[i + 1] < 0) {
                     valuesCalcu[i] = '+';
                     valuesCalcu[i + 1] = -valuesCalcu[i + 1];
                 }
             }
-
+    
             try {
                 const result = eval(valuesCalcu.join(''));
-                if (result.toString().length > 12) {
-                    calcuScreen.value = result.toExponential(4);
-                    valuesCalcu.length = 0;
+    
+                if (isFinite(result)) {
+                    if (result.toString().length > 12) {
+                        calcuScreen.value = result.toExponential(4);
+                    } else {
+                        calcuScreen.value = result;
+                    }
                 } else {
-                    calcuScreen.value = result;
-                    valuesCalcu.length = 0;
+                    calcuScreen.value = 0;
                 }
+    
+                valuesCalcu.length = 0;
                 hasPerformedCalculation = false;
             } catch (error) {
                 calcuScreen.value = 'Error';
             }
         } else {
-
             calcuScreen.value = arrayValue;
         }
-
-        
     }
+    
 
     function binaryNumber() {
         if (alreadyBinary) {
